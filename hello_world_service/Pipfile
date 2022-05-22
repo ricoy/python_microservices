@@ -5,14 +5,16 @@ name = "pypi"
 
 [scripts]
 dev = "python hello_world_service.py"
-prod = "uwsgi --ini hello_world_service.ini --socket 0.0.0.0:3001 --protocol=http -w hello_world_service:app"
+prod = "./start.sh"
+test = "pytest"
 
 [packages]
 flask = "~=2.1"
 python-dotenv = "~=0.20"
-uwsgi = "*"
+uwsgi = "~=2.0.20"
 
 [dev-packages]
+pytest = "*"
 
 [requires]
 python_version = "3.10"

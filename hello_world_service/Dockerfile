@@ -1,5 +1,7 @@
 FROM python:3.10-alpine
 
+WORKDIR /app
+
 RUN pip install pipenv
 
 ADD hello_world_service.ini .
@@ -20,7 +22,8 @@ RUN apk update && \
     pip3 install -r requirements.txt && \
     apk del python3-dev
 
+EXPOSE 5000
+
 CMD [ "./start.sh"]
 
-EXPOSE 3001
 
