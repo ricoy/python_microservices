@@ -17,7 +17,6 @@ RUN apk update && \
     apk add --no-cache python3-dev build-base linux-headers pcre-dev bash && \
     pip3 install pipenv && \
     pipenv lock -r > requirements.txt && \
-    pipenv lock --dev -r > dev-requirements.txt && \
     pip3 uninstall --yes pipenv && \
     pip3 install -r requirements.txt && \
     apk del python3-dev
